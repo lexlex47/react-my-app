@@ -1,13 +1,129 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+    height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Catamaran', sans-serif;
+}
+
+ol,
+ul {
+    padding-left: 30px;
+}
+
+.board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.status {
+    padding-top: 30px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    font-size: 20px;
+}
+
+.btn {
+    padding: 12px 16px;
+    margin-top: 18px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #3498db;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color .25s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.square {
+    background: #fff;
+    border: 1.7px solid #000;
+    float: left;
+    font-size: var(--square-font-size);
+    font-weight: 700;
+    line-height: var(--square-size);
+    height: var(--square-size);
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    width: var(--square-size);
+    margin-bottom: 0;
+    border-radius: 0
+}
+
+.board-row:first-child>.square {
+    border-top: none
+}
+
+.board-row:last-child>.square {
+    border-bottom: none
+}
+
+.board-row>.square:first-child {
+    border-left: none
+}
+
+.board-row>.square:last-child {
+    border-right: none
+}
+
+.kbd-navigation .square:focus {
+    background: #ddd
+}
+
+.game {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row
+}
+
+.board-row,
+.game {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.board-row {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.board-row:after {
+    clear: both;
+    content: "";
+    display: table
+}
+
+@-webkit-keyframes blinker {
+    50% {
+        opacity: 0
+    }
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0
+    }
 }
